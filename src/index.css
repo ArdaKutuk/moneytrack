@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("./assets/fonts/Manrope-Variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/IBMPlexMono-Medium.woff2") format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mt-bg: #0d0f12;
+  --mt-surface: #14171c;
+  --mt-surface-alt: #12161b;
+  --mt-sidebar: #101317;
+  --mt-topbar: #0f1216;
+  --mt-border: #22262e;
+  --mt-border-soft: #1e222a;
+  --mt-text: #e7e9ed;
+  --mt-text-secondary: #8b929e;
+  --mt-text-muted: #6b7280;
+  --mt-text-faint: #7b8290;
+}
+
+html.light {
+  --mt-bg: #f5f6f8;
+  --mt-surface: #ffffff;
+  --mt-surface-alt: #f0f1f4;
+  --mt-sidebar: #ffffff;
+  --mt-topbar: #ffffff;
+  --mt-border: #e4e6ea;
+  --mt-border-soft: #eceef1;
+  --mt-text: #14171c;
+  --mt-text-secondary: #565d69;
+  --mt-text-muted: #7c8391;
+  --mt-text-faint: #8992a1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--mt-bg);
+  color: var(--mt-text);
+  font-family: "Manrope", -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--mt-text-muted);
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--mt-border);
+  border-radius: 8px;
+  border: 3px solid var(--mt-bg);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+.drag {
+  -webkit-app-region: drag;
+}

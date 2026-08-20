@@ -64,6 +64,10 @@ jobs:
 
   publish-release:
     needs: [build-macos, build-windows]
+    # Publish whatever platform(s) succeeded rather than requiring both —
+    # re-running just the failed platform's job later and re-running this
+    # job will add its artifact to the same release.
+    if: always() && (needs.build-macos.result == 'success' || needs.build-windows.result == 'success')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -71,6 +75,8 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
+          # Don't fail the whole job if only one platform's artifact exists.
+          merge-multiple: false
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

@@ -7,6 +7,9 @@
   "private": true,
   "main": "dist-electron/electron/main.js",
   "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0 <23.0.0"
+  },
   "scripts": {
     "dev": "concurrently -k -n VITE,ELECTRON -c blue,green \"npm:dev:vite\" \"npm:dev:electron\"",
     "dev:vite": "vite",

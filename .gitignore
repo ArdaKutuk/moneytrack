@@ -33,3 +33,4 @@ Thumbs.db
 
 # Test coverage
 coverage/
+.claude/scheduled_tasks.lock

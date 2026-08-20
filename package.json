@@ -21,8 +21,7 @@
     "test:watch": "vitest",
     "dist": "npm run build && electron-builder",
     "dist:mac": "npm run build && electron-builder --mac",
-    "dist:win": "npm run build && electron-builder --win",
-    "postinstall": "electron-builder install-app-deps"
+    "dist:win": "npm run build && electron-builder --win"
   },
   "overrides": {
     "node-gyp": "^11.0.0"
@@ -75,7 +74,10 @@
       "target": [
         {
           "target": "dmg",
-          "arch": ["x64", "arm64"]
+          "arch": [
+            "x64",
+            "arm64"
+          ]
         }
       ],
       "icon": "build/icon.icns",

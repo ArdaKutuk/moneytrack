@@ -143,10 +143,10 @@ npm install
 npm run dev
 ```
 
-`npm install` also runs `electron-builder install-app-deps`, which rebuilds `better-sqlite3` for
-your installed Electron version automatically — no manual `node-gyp` steps needed on a normal
-Node.js LTS setup. (`better-sqlite3` ships prebuilt N-API binaries for macOS/Windows/Linux ×
-x64/arm64, so most machines don't compile anything at all.)
+No native rebuild step is needed on `npm install` — `better-sqlite3` ships prebuilt N-API
+binaries for macOS/Windows/Linux × x64/arm64, and N-API's ABI stability means those prebuilds
+work inside Electron as-is. `electron-builder` performs its own native-dependency check during
+packaging (`npm run dist:mac`/`dist:win`), so nothing extra is required at install time.
 
 `npm run dev` starts the Vite dev server and Electron together, with hot reload on the renderer.
 

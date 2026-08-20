@@ -130,9 +130,11 @@ live database (via `better-sqlite3`'s own `.backup()` API, safe under WAL) to
 
 ## Getting started
 
-Requires Node.js 18–22 and npm. (Electron's installer uses `extract-zip`, which has a known
+Requires Node.js 22 (LTS) and npm — `better-sqlite3`'s prebuilt binaries require Node ≥22, and
+older versions will fall back to a from-source `node-gyp` compile that can fail without a full
+native toolchain installed. (Electron's own installer uses `extract-zip`, which also has a known
 incompatibility with very new/pre-release Node versions such as 24+; if `npm install` reports
-`Electron failed to install correctly`, switch to an LTS Node version in that range.)
+`Electron failed to install correctly`, stick to Node 22 LTS rather than a newer major.)
 
 ```bash
 git clone <this-repo>

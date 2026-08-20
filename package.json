@@ -8,7 +8,7 @@
   "main": "dist-electron/electron/main.js",
   "type": "commonjs",
   "engines": {
-    "node": ">=18.0.0 <23.0.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "dev": "concurrently -k -n VITE,ELECTRON -c blue,green \"npm:dev:vite\" \"npm:dev:electron\"",
@@ -58,6 +58,7 @@
     "appId": "com.moneytrack.app",
     "productName": "Moneytrack",
     "copyright": "Copyright © Moneytrack",
+    "publish": null,
     "directories": {
       "buildResources": "build",
       "output": "release"
